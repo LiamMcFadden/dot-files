@@ -8,12 +8,11 @@ export ZSH="/home/liamm18/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# tjkirch_mod, half-life is good
-ZSH_THEME="tjkirch_mod"
+# i kinda like "dpoggi" and "jonathan"
+ZSH_THEME="dpoggi"
 
-alias ls='ls --color=auto'
-
-eval `dircolors ~/.dircolors`
+# i do dis later yes?
+#eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,3 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# shortcut to windows home
+alias winHome='cd /mnt/c/Users/coolm'
+alias vim='vim.gtk3'
