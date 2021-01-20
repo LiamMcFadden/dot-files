@@ -7,7 +7,7 @@
 
 """"""""""""""""
 " Plugin/startup
-k""""""""""""""""
+""""""""""""""""
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
