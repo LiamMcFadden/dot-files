@@ -2,14 +2,15 @@
 
 # Updates da dot-files #
 
+# -t not currently working... #
 # invoke with '-t' to update terminal settings (invoke as second argument) #
 # invoke with '-e' to update external files #
 # invoke with '-r' to update repo files #
 
-update_term=false
+$update_term = false
 
 if [[ $2 = "-t" ]]; then
-    $update_term=true
+    $update_term = true
 fi
 
 # update external files #
