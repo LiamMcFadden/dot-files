@@ -1,8 +1,8 @@
 "░░░██╗░░░██╗██╗███╗░░░███╗██████╗░░█████╗░
 "░░░██║░░░██║██║████╗░████║██╔══██╗██╔══██╗
 "░░░╚██╗░██╔╝██║██╔████╔██║██████╔╝██║░░╚═╝
-"░░░░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗
-"██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝
+"░░░░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗  
+"██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝   
 "╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░
 
 """"""""""""""""
@@ -11,6 +11,7 @@
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+set ttimeoutlen=50
 
 set autoread
 " pathogen n da gudno
@@ -48,6 +49,7 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+set scrolloff=3 " keep 3 lines below/above the cursor
 
 set ignorecase
 set ruler
@@ -61,7 +63,7 @@ map <leader>ss :setlocal spell!<cr>
 """""""""""""""""""
 " Colors and things
 """""""""""""""""""
-" disable for markdown cus it's annoying "
+" disable markdown cus it's annoying "
 autocmd! bufreadpost *.md set syntax=off
 
 " Enable 256 colors palette in Gnome Terminal
@@ -70,7 +72,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme default
 catch
 endtry
 
@@ -86,11 +88,14 @@ set ffs=unix,dos,mac
 """"""""""""""
 " tab settings
 """"""""""""""
-set tabstop=4  " num spaces that \t is equal to
-set softtabstop=4  " num spaces when editing
-set expandtab  " makes tabs spaces
-set ai "Auto indent
-set si "Smart indent
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+set autoindent
 
 
 """"""""""""""""""""""""""""""""""""""
