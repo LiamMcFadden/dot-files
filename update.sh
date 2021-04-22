@@ -14,15 +14,15 @@ fi
 
 # update external files #
 if [[ $1 = "-e" ]]; then
-   cp -r ./bash_profile ./bashrc ./dircolors ./mydircolors ./tmux.conf ./vim ./vimrc ./zshrc ~/
+   cp -r ./.bash_profile ./.bashrc ./.dircolors ./.mydircolors ./.tmux.conf ./.vim ./.vimrc ./.zshrc ~/
 
    if [[ $update_term = true ]]; then
-       cp ./settings.json /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState/settings.json 
+       cp ./settings.json /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json 
    fi
 
 # update repo files #
 elif [[ $1 = "-r" ]]; then
-   cp -r ~/bash_profile ~/bashrc ~/dircolors ~/mydircolors ~/tmux.conf ~/vim ~/vimrc ~/zshrc ./
+   cp -r ~/.bash_profile ~/.bashrc ~/.dircolors ~/.mydircolors ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./
 
    if [[ $update_term = true ]]; then
        cp /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState/settings.json ./

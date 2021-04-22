@@ -1,24 +1,18 @@
-[[ $TERM != "screen" ]] && exec tmux
-
-# make sure permissions are all good
-umask 077
-
 # If you come from bash you might have to change your $PATH.
-export PATH=/home/courses/cs3214/bin:$HOME/temp:$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/ugrads/majors/liamm18/.oh-my-zsh"
+export ZSH="/home/liamm18/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# i kinda like "dpoggi" and "jonathan" nicoulaj cypher
+# i kinda like "dpoggi" and "jonathan", cypher, clean nicoulaj
 ZSH_THEME="dpoggi"
 
 # i do dis later yes?
 #eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
-. "/home/ugrads/majors/liamm18/.local/share/lscolors.sh"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -82,6 +76,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+. "/home/liamm18/.local/share/lscolors.sh"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -108,5 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # shortcut to windows home
-alias c='commit.sh'
-#alias vim='vim.gtk3'
+alias winHome='cd /mnt/c/Users/coolm'
+alias rl='ssh liamm18@rlogin.cs.vt.edu'
+alias python='python.exe'
+alias python3='python3.exe'
+alias inspiration='fortune | cowsay'
+# alias vim='vim.gtk3'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
