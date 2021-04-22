@@ -103,4 +103,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # shortcut to windows home
 alias winHome='cd /mnt/c/Users/coolm'
-alias vim='vim.gtk3'
+# alias vim='vim.gtk3'
