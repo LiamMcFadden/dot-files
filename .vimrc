@@ -59,6 +59,9 @@ syntax enable
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
+" Allow mouse navigation "
+set mouse=a
+
 
 """""""""""""""""""
 " Colors and things
@@ -72,7 +75,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme default
+    colorscheme desert
 catch
 endtry
 
@@ -153,7 +156,7 @@ nnoremap ,<space> :nohlsearch<CR>
 set laststatus=2
 
 " Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c\ \ \ %P
 
 
 """"""""""""""""""
