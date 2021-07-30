@@ -70,11 +70,16 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme github 
 catch
 endtry
 
 set background=dark
+
+" highlights "
+highlight CursorLine ctermbg=black
+highlight CursorLineNr ctermbg=black
+highlight LineNr ctermbg=none
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

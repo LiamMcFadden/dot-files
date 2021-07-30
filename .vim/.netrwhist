@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/liamm18/code/ETHEX_Geolocation/MATLAB/Delivery_Jun_2021'
+let g:netrw_dirhist_5='/home/liamm18/code/ETHEX_Geolocation/MATLAB'
+let g:netrw_dirhist_4='/home/liamm18/vectorrideshare/Game/src/libs'
+let g:netrw_dirhist_3='/home/liamm18/vectorrideshare/Game/src'
+let g:netrw_dirhist_2='/home/liamm18/vectorrideshare/Game/public/html'
+let g:netrw_dirhist_1='/home/liamm18/vectorrideshare/Game/src/libs'
