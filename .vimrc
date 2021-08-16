@@ -1,8 +1,8 @@
 "░░░██╗░░░██╗██╗███╗░░░███╗██████╗░░█████╗░
 "░░░██║░░░██║██║████╗░████║██╔══██╗██╔══██╗
 "░░░╚██╗░██╔╝██║██╔████╔██║██████╔╝██║░░╚═╝
-"░░░░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗  
-"██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝   
+"░░░░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗
+"██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝
 "╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░
 
 """"""""""""""""
@@ -11,7 +11,6 @@
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
-set ttimeoutlen=50
 
 set autoread
 " pathogen n da gudno
@@ -49,7 +48,6 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-set scrolloff=3 " keep 3 lines below/above the cursor
 
 set ignorecase
 set ruler
@@ -59,14 +57,11 @@ syntax enable
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
-" Allow mouse navigation "
-set mouse=a
-
 
 """""""""""""""""""
 " Colors and things
 """""""""""""""""""
-" disable markdown cus it's annoying "
+" disable for markdown cus it's annoying "
 autocmd! bufreadpost *.md set syntax=off
 
 " Enable 256 colors palette in Gnome Terminal
@@ -96,14 +91,11 @@ set ffs=unix,dos,mac
 """"""""""""""
 " tab settings
 """"""""""""""
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-set autoindent
+set tabstop=4  " num spaces that \t is equal to
+set softtabstop=4  " num spaces when editing
+set expandtab  " makes tabs spaces
+set ai "Auto indent
+set si "Smart indent
 
 
 """"""""""""""""""""""""""""""""""""""
@@ -161,7 +153,7 @@ nnoremap ,<space> :nohlsearch<CR>
 set laststatus=2
 
 " Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c\ \ \ %P
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 
 """"""""""""""""""

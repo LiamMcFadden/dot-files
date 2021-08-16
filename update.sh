@@ -7,7 +7,7 @@
 # invoke with '-e' to update external files #
 # invoke with '-r' to update repo files #
 
-$update_term = false
+update_term=false
 
 if [[ $2 = "-t" ]]; then
     $update_term = true

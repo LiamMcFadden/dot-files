@@ -6,7 +6,3 @@ let g:netrw_dirhist_4='/home/liamm18/vectorrideshare/Game/src/libs'
 let g:netrw_dirhist_3='/home/liamm18/vectorrideshare/Game/src'
 let g:netrw_dirhist_2='/home/liamm18/vectorrideshare/Game/public/html'
 let g:netrw_dirhist_1='/home/liamm18/vectorrideshare/Game/src/libs'
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/mnt/c/Users/13159/AppData/Roaming/Spotify/Users/22r6m52rtgejp3pptjxskhfny-user'
-let g:netrw_dirhist_2='/home/liamm18/.vim'
-let g:netrw_dirhist_1='/home/liamm18/.vscode-server'
