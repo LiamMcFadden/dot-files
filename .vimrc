@@ -5,6 +5,7 @@
 "██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝
 "╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░
 
+
 """"""""""""""""
 " Plugin/startup
 """"""""""""""""
@@ -70,16 +71,14 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme github 
+    colorscheme mod_pablo
 catch
 endtry
 
 set background=dark
 
 " highlights "
-highlight CursorLine ctermbg=black
 highlight CursorLineNr ctermbg=black
-highlight LineNr ctermbg=none
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -136,7 +135,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Some interface stuff
 """"""""""""""""""""""
 set showcmd  " shows most recent command
-set cursorline  " highlight curr line
 filetype indent on  " indent in a filetype specific way
 set wildmenu  " visual autocomplete
 set lazyredraw  " only redraw screen when needed
@@ -154,6 +152,9 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+" Allow mouse navigation
+set mouse=a
 
 
 """"""""""""""""""
