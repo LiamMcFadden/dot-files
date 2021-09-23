@@ -13,8 +13,14 @@ if [[ $2 = "-t" ]]; then
     $update_term = true
 fi
 
+
+
 # update external files #
 if [[ $1 = "-e" ]]; then
+   # create backup of current files and store in ./backup
+   mkdir backup
+   cp -r ~/.bash_profile ~/.bashrc ~/.dircolors ~/.mydircolors ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./backup
+
    cp -r ./.bash_profile ./.bashrc ./.dircolors ./.mydircolors ./.tmux.conf ./.vim ./.vimrc ./.zshrc ~/
 
    if [[ $update_term = true ]]; then
