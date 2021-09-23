@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/mnt/c/Program\ Files/nodejs/:$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/liamm18/.oh-my-zsh"
@@ -8,12 +8,10 @@ export ZSH="/home/liamm18/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# i kinda like "dpoggi" and "jonathan"  nicoulaj cypher   
-ZSH_THEME="dpoggi"
+# i kinda like "dpoggi" and "jonathan", cypher, clean nicoulaj
+ZSH_THEME="clean"
 
 # i do dis later yes?
-# the repo found here: https://github.com/trapd00r/LS_COLORS is really good
-. "/home/liamm18/.local/share/lscolors.sh"
 #eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
 
 # Set list of themes to pick from when loading at random
@@ -78,6 +76,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+. "/home/liamm18/.local/share/lscolors.sh"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -105,7 +105,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # shortcut to windows home
 alias winHome='cd /mnt/c/Users/coolm'
-alias vim='vim.gtk3'
 alias rl='ssh liamm18@rlogin.cs.vt.edu'
-alias mongo='mongo.exe'
-alias mongod='mongod.exe'
+# forward port 10788 on rlogin to local port 10000
+alias pfrl='ssh -YC -L 10000:localhost:10788 liamm18@rlogin.cs.vt.edu'
+alias python='python.exe'
+alias python3='python3.exe'
+alias inspiration='fortune | cowsay'
+# alias vim='vim.gtk3'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

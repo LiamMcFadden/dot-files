@@ -12,3 +12,4 @@ PATH=~/bin:$PATH:./:/mnt/c/Program\ Files/Common\ Files/Oracle/Java/javapath:/mn
 export PATH
 
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+. "$HOME/.cargo/env"

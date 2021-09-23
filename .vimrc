@@ -1,10 +1,9 @@
 "░░░██╗░░░██╗██╗███╗░░░███╗██████╗░░█████╗░
 "░░░██║░░░██║██║████╗░████║██╔══██╗██╔══██╗
 "░░░╚██╗░██╔╝██║██╔████╔██║██████╔╝██║░░╚═╝
-"░░░░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗
-"██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝
+"░░░░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗  
+"██╗░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝   
 "╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░
-
 
 """"""""""""""""
 " Plugin/startup
@@ -12,6 +11,7 @@
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+set ttimeoutlen=50
 
 set autoread
 " pathogen n da gudno
@@ -49,6 +49,7 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+set scrolloff=3 " keep 3 lines below/above the cursor
 
 set ignorecase
 set ruler
@@ -58,11 +59,14 @@ syntax enable
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
+" Allow mouse navigation "
+set mouse=a
+
 
 """""""""""""""""""
 " Colors and things
 """""""""""""""""""
-" disable for markdown cus it's annoying "
+" disable markdown cus it's annoying "
 autocmd! bufreadpost *.md set syntax=off
 
 " Enable 256 colors palette in Gnome Terminal
@@ -77,9 +81,6 @@ endtry
 
 set background=dark
 
-" highlights "
-highlight CursorLineNr ctermbg=black
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -90,11 +91,14 @@ set ffs=unix,dos,mac
 """"""""""""""
 " tab settings
 """"""""""""""
-set tabstop=4  " num spaces that \t is equal to
-set softtabstop=4  " num spaces when editing
-set expandtab  " makes tabs spaces
-set ai "Auto indent
-set si "Smart indent
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+set autoindent
 
 
 """"""""""""""""""""""""""""""""""""""
@@ -135,6 +139,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Some interface stuff
 """"""""""""""""""""""
 set showcmd  " shows most recent command
+set cursorline  " highlight curr line
 filetype indent on  " indent in a filetype specific way
 set wildmenu  " visual autocomplete
 set lazyredraw  " only redraw screen when needed
@@ -151,12 +156,26 @@ nnoremap ,<space> :nohlsearch<CR>
 set laststatus=2
 
 " Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-" Allow mouse navigation
-set mouse=a
-
-
+" set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c\ \ \ %P  
+" BETTER STATUS LINE
+" source: https://stackoverflow.com/questions/5375240/a-more-useful-statusline-in-vim
+set statusline=
+set statusline+=%7*\[%n]                                  "buffernr
+set statusline+=%1*\ %<%F\                                "File+path
+set statusline+=%2*\ %y\                                  "FileType
+set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
+set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
+set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..) 
+set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
+set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+set statusline+=%9*\ col:%03c\                            "Colnr
+set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+" set da colors --> this goes in current colorscheme file
+" now set it up to change the status line based on mode
+if version >= 700
+  au InsertEnter * hi User8 term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+  au InsertLeave * hi User8 term=reverse ctermfg=0 ctermbg=69 gui=bold,reverse
+endif
 """"""""""""""""""
 " folding settings
 """"""""""""""""""
@@ -197,3 +216,11 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
+
+function! HighlightSearch()
+	if &hls
+		return 'H'
+	else
+		return ''
+	endif
+endfunction
