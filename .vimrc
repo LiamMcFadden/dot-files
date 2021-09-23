@@ -161,7 +161,7 @@ set laststatus=2
 " source: https://stackoverflow.com/questions/5375240/a-more-useful-statusline-in-vim
 set statusline=
 set statusline+=%7*\[%n]                                  "buffernr
-set statusline+=%1*\ %<%F\                                "File+path
+set statusline+=%1*\ %<%F\ %m\                                "File+path
 set statusline+=%2*\ %y\                                  "FileType
 set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
 set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
@@ -169,7 +169,7 @@ set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix.
 set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=%9*\ col:%03c\                            "Colnr
-set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+set statusline+=%0*\ \ %r%w\ %P\ \                      "Modified? Readonly? Top/bot.
 " set da colors --> this goes in current colorscheme file
 " now set it up to change the status line based on mode
 if version >= 700

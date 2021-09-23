@@ -35,7 +35,11 @@ elif [[ $1 = "-r" ]]; then
        cp /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState/settings.json ./
    fi
 
+elif [[ $1 = "--restore" ]]; then
+    cp -a ./backup/. ~/
+
+
 else
-    echo "./update [-e/-r] (-e for update external/-r for update repo) [-t] (update term settings) [win. user name]"
+    echo "./update [-e/-r/--restore] [-e for update external/-r for update repo/--restore to restore previous files] [-t] (update term settings) [win. user name]"
 fi
 
