@@ -19,9 +19,9 @@ fi
 if [[ $1 = "-e" ]]; then
    # create backup of current files and store in ./backup
    mkdir backup
-   cp -r ~/.bash_profile ~/.bashrc ~/.dircolors ~/.mydircolors ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./backup
+   cp -r ~/.bash_profile ~/.bashrc  ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./backup
 
-   cp -r ./.bash_profile ./.bashrc ./.dircolors ./.mydircolors ./.tmux.conf ./.vim ./.vimrc ./.zshrc ~/
+   cp -r ./.bash_profile ./.bashrc ./.tmux.conf ./.vim ./.vimrc ./.zshrc ~/
 
    if [[ $update_term = true ]]; then
        cp ./settings.json /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json 
@@ -29,7 +29,7 @@ if [[ $1 = "-e" ]]; then
 
 # update repo files #
 elif [[ $1 = "-r" ]]; then
-   cp -r ~/.bash_profile ~/.bashrc ~/.dircolors ~/.mydircolors ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./
+   cp -r ~/.bash_profile ~/.bashrc  ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./
 
    if [[ $update_term = true ]]; then
        cp /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState/settings.json ./
