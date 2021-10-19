@@ -139,7 +139,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Some interface stuff
 """"""""""""""""""""""
 set showcmd  " shows most recent command
-set cursorline  " highlight curr line
 filetype indent on  " indent in a filetype specific way
 set wildmenu  " visual autocomplete
 set lazyredraw  " only redraw screen when needed
@@ -230,6 +229,19 @@ hi User2 ctermfg=007 ctermbg=236 guibg=#303030 guifg=#adadad
 hi User3 ctermfg=236 ctermbg=236 guibg=#303030 guifg=#303030
 hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4e
 
+" Turn cursor to a line when in insert mode
+" 
+" Settings:
+"   0 -> blinking block
+"   1 -> blinking block (default)
+"   2 -> steady block
+"   3 -> blinking underline
+"   4 -> steady underline
+"   5 -> blinking bar (xterm)
+"   6 -> steady bar (xterm)
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[1 q"
+
 
 """"""""""""""""""
 " folding settings
@@ -257,6 +269,8 @@ nnoremap gV `[v`]
 " leader stuff
 let mapleader=","
 nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>n :call ToggleNumber()<CR>
+nnoremap <leader>s :call ToggleSpell()<CR>
 
 
 """""""""""""""""""""""
@@ -279,3 +293,13 @@ function! HighlightSearch()
 		return ''
 	endif
 endfunction
+
+function! ToggleSpell()
+    if(&spell == 1)    
+        setlocal nospell
+    else
+        setlocal spell
+    endif
+endfunction
+
+
