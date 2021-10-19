@@ -20,6 +20,7 @@ highlight Directory  ctermfg=2						  guifg=#00c000
 highlight StatusLine ctermfg=0 ctermbg=250 cterm=none guifg=#5f87af guibg=#0000ff gui=none
 highlight Normal									  guifg=#ffffff guibg=#000000
 highlight Search				ctermbg=3							guibg=#c0c000
+highlight LineNr     ctermfg=Gray
 
 hi User1 ctermfg=182 ctermbg=160
 hi User2 ctermfg=black ctermbg=173
