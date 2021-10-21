@@ -53,7 +53,7 @@ set scrolloff=3 " keep 3 lines below/above the cursor
 
 set ignorecase
 set ruler
-set number
+set relativenumber
 syntax enable
 
 " Pressing ,ss will toggle and untoggle spell checking
@@ -98,13 +98,15 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" delete entire tab with one keystroke
+set softtabstop=4
 set autoindent
+
 
 
 """"""""""""""""""""""""""""""""""""""
 " settings for the other type of tabs:
 """"""""""""""""""""""""""""""""""""""
-"
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -154,6 +156,8 @@ nnoremap ,<space> :nohlsearch<CR>
 " Always show the status line
 set laststatus=2
 
+set cursorline
+
 " Format the status line
 " set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c\ \ \ %P  
 " BETTER STATUS LINE
@@ -187,25 +191,25 @@ hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
 
 " Status Line Custom
 let g:currentmode={
-    \ 'n'  : 'Normal',
-    \ 'no' : 'Normal·Operator Pending',
-    \ 'v'  : 'Visual',
-    \ 'V'  : 'V·Line',
-    \ '^V' : 'V·Block',
-    \ 's'  : 'Select',
-    \ 'S'  : 'S·Line',
-    \ '^S' : 'S·Block',
-    \ 'i'  : 'Insert',
-    \ 'R'  : 'Replace',
-    \ 'Rv' : 'V·Replace',
-    \ 'c'  : 'Command',
-    \ 'cv' : 'Vim Ex',
-    \ 'ce' : 'Ex',
-    \ 'r'  : 'Prompt',
-    \ 'rm' : 'More',
-    \ 'r?' : 'Confirm',
-    \ '!'  : 'Shell',
-    \ 't'  : 'Terminal'
+    \ "n"      : "Normal",
+    \ "no"     : "Normal·Operator Pending",
+    \ "v"      : "Visual",
+    \ "V"      : "V·Line",
+    \ "\<C-v>" : "V·Block",
+    \ "s"      : "Select",
+    \ "S"      : "S·Line",
+    \ "^S"     : "S·Block",
+    \ "i"      : "Insert",
+    \ "R"      : "Replace",
+    \ "Rv"     : "V·Replace",
+    \ "c"      : "Command",
+    \ "cv"     : "Vim Ex",
+    \ "ce"     : "Ex",
+    \ "r"      : "Prompt",
+    \ "rm"     : "More",
+    \ "r?"     : "Confirm",
+    \ "!"      : "Shell",
+    \ "t"      : "Terminal"
     \}
 
 set laststatus=2
@@ -231,7 +235,7 @@ hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4e
 
 " Turn cursor to a line when in insert mode
 " 
-" Settings:
+" Options:
 "   0 -> blinking block
 "   1 -> blinking block (default)
 "   2 -> steady block
@@ -240,6 +244,7 @@ hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4e
 "   5 -> blinking bar (xterm)
 "   6 -> steady bar (xterm)
 let &t_SI = "\e[6 q"
+let &t_SR = "\e[2 q"
 let &t_EI = "\e[1 q"
 
 
@@ -271,6 +276,7 @@ let mapleader=","
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>n :call ToggleNumber()<CR>
 nnoremap <leader>s :call ToggleSpell()<CR>
+nnoremap <leader>p :call TogglePaste()<CR>
 
 
 """""""""""""""""""""""
@@ -283,6 +289,7 @@ function! ToggleNumber()
         set number
     else
         set relativenumber
+		set nonumber
     endif
 endfunc
 
@@ -301,5 +308,15 @@ function! ToggleSpell()
         setlocal spell
     endif
 endfunction
+
+function! TogglePaste()
+    if (&paste == 1)
+        set nopaste
+		echo "nopaste"
+    else 
+        set paste
+		echo "paste"
+    endif
+endfunc
 
 
