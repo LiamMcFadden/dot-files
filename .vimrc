@@ -277,6 +277,7 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>n :call ToggleNumber()<CR>
 nnoremap <leader>s :call ToggleSpell()<CR>
 nnoremap <leader>p :call TogglePaste()<CR>
+nnoremap <leader>w :call ToggleWrap()<CR>
 
 
 """""""""""""""""""""""
@@ -318,5 +319,14 @@ function! TogglePaste()
 		echo "paste"
     endif
 endfunc
+
+
+function! ToggleWrap()
+    if (&wrap)
+        set nowrap
+    else
+        set wrap
+    endif
+endfunction
 
 
