@@ -140,6 +140,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """"""""""""""""""""""
 " Some interface stuff
 """"""""""""""""""""""
+set number
 set showcmd  " shows most recent command
 filetype indent on  " indent in a filetype specific way
 set wildmenu  " visual autocomplete
@@ -287,10 +288,8 @@ nnoremap <leader>w :call ToggleWrap()<CR>
 function! ToggleNumber()
     if(&relativenumber == 1)
         set norelativenumber
-        set number
     else
         set relativenumber
-		set nonumber
     endif
 endfunc
 
