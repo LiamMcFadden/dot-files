@@ -75,7 +75,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme mod_pablo
+    colorscheme default
 catch
 endtry
 
