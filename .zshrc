@@ -2,17 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/liamm18/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# i kinda like "dpoggi" and "jonathan", cypher, clean nicoulaj
-ZSH_THEME="clean"
-
-# i do dis later yes?
-#eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
+# kafeitu, 
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -27,14 +24,13 @@ ZSH_THEME="clean"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -49,6 +45,9 @@ ZSH_THEME="clean"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -76,8 +75,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-. "/home/liamm18/.local/share/lscolors.sh"
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -99,18 +96,8 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+alias vi="vim"
+alias sz="source ~/.zshrc"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# shortcut to windows home
-alias winHome='cd /mnt/c/Users/coolm'
-alias rl='ssh liamm18@rlogin.cs.vt.edu'
-# forward port 10788 on rlogin to local port 10000
-alias pfrl='ssh -YC -L 10000:localhost:10788 liamm18@rlogin.cs.vt.edu'
-alias python='python.exe'
-alias python3='python3.exe'
-alias inspiration='fortune | cowsay'
-# alias vim='vim.gtk3'
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

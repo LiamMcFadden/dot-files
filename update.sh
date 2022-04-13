@@ -19,7 +19,7 @@ if [[ $1 = "-e" ]]; then
    mkdir backup
    cp -R ~/.bash_profile ~/.bashrc  ~/.tmux.conf ~/.vim ~/.vimrc ~/.zshrc ./backup
 
-   cp -R ./.bash_profile ./.bashrc ./.tmux.conf ./.vim ./.vimrc ./.zshrc ~/
+   cp -R .bash_profile .bashrc .tmux.conf .vim .vimrc .zshrc ~/
 
    if [[ $update_term = true ]]; then
        cp ./settings.json /mnt/c/Users/$3/Appdata/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json 
@@ -34,7 +34,7 @@ elif [[ $1 = "-r" ]]; then
    fi
 
 elif [[ $1 = "--restore" ]]; then
-    cp -a ./backup/. ~/
+    cp -a backup/. ~/
 
 
 else
