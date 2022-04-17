@@ -298,7 +298,6 @@ function! ToggleNumber()
         set number
     else
         set relativenumber
-		set nonumber
     endif
 endfunc
 
