@@ -12,6 +12,7 @@
 filetype plugin on
 filetype indent on
 set ttimeoutlen=50
+set nocompatible
 
 set autoread
 " pathogen n da gudno
@@ -19,6 +20,12 @@ execute pathogen#infect()
 if has('python3')
     let g:gundo_prefer_python3 = 1
 endif
+
+call plug#begin()
+
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
@@ -76,7 +83,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme mod_pablo
+    colorscheme onedark
 catch
 endtry
 
