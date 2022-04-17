@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/liam/.vim/bundle/gundo.vim'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/c/Users/13159/code/VBAWellnessApp/Client/src/scenes/compete'
+let g:netrw_dirhist_5='/c/Users/13159/florence/CodeScreen_sedre4gr/node_modules'
 let g:netrw_dirhist_4='/etc/depmod.d'
 let g:netrw_dirhist_3='/mnt/c/Users/13159/AppData/Roaming/Spotify/Users/22r6m52rtgejp3pptjxskhfny-user'
 let g:netrw_dirhist_2='/home/liamm18/.vim'

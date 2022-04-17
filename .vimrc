@@ -54,6 +54,7 @@ set scrolloff=3 " keep 3 lines below/above the cursor
 set ignorecase
 set ruler
 set relativenumber
+set number
 syntax enable
 
 " Pressing ,ss will toggle and untoggle spell checking
@@ -75,7 +76,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme default
+    colorscheme mod_pablo
 catch
 endtry
 
@@ -140,7 +141,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """"""""""""""""""""""
 " Some interface stuff
 """"""""""""""""""""""
-set number
 set showcmd  " shows most recent command
 filetype indent on  " indent in a filetype specific way
 set wildmenu  " visual autocomplete
@@ -288,8 +288,10 @@ nnoremap <leader>w :call ToggleWrap()<CR>
 function! ToggleNumber()
     if(&relativenumber == 1)
         set norelativenumber
+        set number
     else
         set relativenumber
+		set nonumber
     endif
 endfunc
 
