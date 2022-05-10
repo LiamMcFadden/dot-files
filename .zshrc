@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/liam/.oh-my-zsh"
+export ZSH="/home/liamm18/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -76,7 +76,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# . "/home/liamm18/.local/share/lscolors.sh"
+. "/home/liamm18/.local/share/lscolors.sh"
 
 # User configuration
 
@@ -111,6 +111,6 @@ alias pfrl='ssh -YC -L 10000:localhost:10788 liamm18@rlogin.cs.vt.edu'
 alias python='python.exe'
 alias python3='python3.exe'
 alias inspiration='fortune | cowsay'
-alias vi="vim"
+# alias vim='vim.gtk3'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
