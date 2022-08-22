@@ -21,9 +21,12 @@ if has('python3')
     let g:gundo_prefer_python3 = 1
 endif
 
+" ADD PLUGINS HERE "
 call plug#begin()
 
 Plug 'sheerun/vim-polyglot'
+Plug 'morhetz/gruvbox'
+Plug 'bluz71/vim-moonfly-colors'
 
 call plug#end()
 
@@ -83,7 +86,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme onedark
+    colorscheme gruvbox
 catch
 endtry
 
